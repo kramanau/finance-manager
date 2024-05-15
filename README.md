@@ -48,6 +48,17 @@ The app will allow a user to create a transaction and set the category as well.
 | description | string |  |
 
 ### Timeline 
-**Week 1**: Create initial project structure and start by implementing authentication and authorization using the previous assignments as a backbone. Then I will start with creating the category CRUD operations along with tests to the routes. <br>
-**Week 2**: Create the transactions routes and test with the category routes to make sure they work together. Add tests to the transaction routes and deploy the application.
+**Week 1**: 
+- [ ] Create initial project structure.
+- [ ] Implement authentication and authorization using the previous assignments as a backbone.
+- [ ] Category CRUD operations.
+- [ ] Category route tests.
+<br>
+
+**Week 2**:
+- [ ] Create the transactions routes.
+- [ ] Test transaction routes with category routes.
+- [ ] Transaction route tests.
+- [ ] Deploy application.
+- [ ] Test deployed application (Postman).
 
