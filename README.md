@@ -1,5 +1,21 @@
 # finance-manager
 
+## UPDATE
+
+**Week 1**: 
+- [X] Create initial project structure.
+- [X] Implement authentication and authorization using the previous assignments as a backbone.
+- [X] Category CRUD operations.
+- [ ] Category route tests.
+<br>
+
+**Week 2**:
+- [ ] Create the transactions routes.
+- [ ] Test transaction routes with category routes.
+- [ ] Transaction route tests.
+- [X] Deploy application.
+- [ ] Test deployed application (Postman).
+
 ## Description
 This is a personal finance backend application that caters to individuals needing to track income and expenses. It provides an CRUD API for users to create transactions, assign a category to them, and to keep track of the totals of categories. 
 
