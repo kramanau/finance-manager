@@ -10,10 +10,14 @@ module.exports.getCategoryByName = async (name) => {
     return await Categories.findOne({ name });
 }
 
-module.exports.createCategory = async (name, description) => {
-    return await Categories.create({ name, description });
+module.exports.getCategoriesByUser = async (userId) => {
+    return await Categories.find({ userId });
 }
 
-module.exports.updateCategory = async (_id, name, description) => {
-    return await Categories.updateOne({ _id }, { name, description });
+module.exports.createCategory = async ({ name, description = null, userId }) => {
+    return await Categories.create({ name, description, userId });
+}
+
+module.exports.updateCategory = async (_id, categoryItem) => {
+    return await Categories.updateOne({ _id }, { ...categoryItem });
 }
