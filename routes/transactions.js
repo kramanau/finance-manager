@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const router = Router();
 const transactionsDAO = require('../daos/transaction');
+// const transaction = require("../models/transaction");
 
 router.post("/", async (req, res, next) => {
     if (!req.body.amount){
@@ -23,6 +24,16 @@ router.post("/", async (req, res, next) => {
                 return res.sendStatus(500);
             }
         }
+    }
+});
+
+router.get("/", async (req, res, next) => {
+    const userId = req._id;
+    try {
+        const transactions = await transactionsDAO.getAllTransactions(userId);
+        return res.json(transactions);
+    } catch (e) {
+        return res.sendStatus(500);
     }
 });
 
@@ -50,7 +61,6 @@ router.put("/:id", async (req, res, next) => {
             await transactionsDAO.updateTransactionById(_id, updatedTransaction);
             return res.sendStatus(200);
         } catch (e){
-            console.log(e);
             return res.sendStatus(500);
         }
     }

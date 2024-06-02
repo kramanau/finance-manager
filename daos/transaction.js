@@ -31,3 +31,7 @@ module.exports.getTotalsByCategoryId = async (_id) => {
 module.exports.getTransactionsByCategoryId = async (_id) => {
     return await Transactions.find({ categoryId: _id });
 }
+
+module.exports.getAllTransactions = async (userId) => {
+    return await Transactions.find({ userId });
+}

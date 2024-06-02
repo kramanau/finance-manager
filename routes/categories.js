@@ -23,10 +23,20 @@ router.post("/", async (req, res, next) => {
     }
 });
 
+router.get("/", async (req, res, next) => {
+    const userId = req._id;
+    try {
+        const categories = await categoriesDAO.getCategoriesByUser(userId);
+        return res.json(categories);
+    } catch (e) {
+        return res.sendStatus(500);
+    }
+})
+
 router.get("/:id", async (req, res, next) => {
     const _id = req.params.id;
     try {
-        const category = await categoriesDAO.getCategoryById(_id);
+        const category = await categoriesDAO.getCategoryById(_id, req._id);
         return res.json(category);
     } catch (e){
         return res.sendStatus(500);
@@ -45,7 +55,6 @@ router.get("/:id/total", async (req, res, next) => {
 
 router.get("/:id/transactions", async (req, res, next) => {
     const _id = req.params.id;
-    console.log(req._id); // <---
     try {
         const transactions = await transactionDAO.getTransactionsByCategoryId(_id);
         return res.json(transactions);
@@ -66,7 +75,7 @@ router.put("/:id", async (req, res, next) => {
         categoryItem.description = description;
     }
     try {
-        const category = await categoriesDAO.updateCategory(_id, categoryItem);
+        await categoriesDAO.updateCategory(_id, categoryItem, req._id);
         return res.sendStatus(200);
     } catch (e) {
         return res.sendStatus(500);
