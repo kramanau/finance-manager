@@ -1,6 +1,10 @@
 # finance-manager
 
-## 
+## Self-evaluation
+The project was a great challenge to deploy. A couple of things that I learned are that planning out all the routes and database tables before hand really helped me define and understand the boundaries of my application and made it a lot faster to code. I also learned that testing was very useful in getting things to work properly, especially getting unit tests to pass for the combination of the category and transcational routes. 
+
+Things that went well were the coding part because I had pretty robust definitions before starting. Getting the application deployed on railway was also pretty straight forward from the previous class that we had that went over it. Things that went poorly were some tests took longer than they should have to work because I was not too familiar with jest. Another thing that went poorly was that I had to redo some of the database collection models because one of the attributes was pretty useless (attribute = type, this was used to define income or expense but in reality the user would just input a negative amount so I removed it).
+
 
 ## Description
 This is a personal finance backend application that caters to individuals needing to track income and expenses. It provides an CRUD API for users to create transactions, assign a category to them, and to keep track of the totals of categories. 
