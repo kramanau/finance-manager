@@ -12,7 +12,7 @@ router.post("/", async (req, res, next) => {
             amount: req.body.amount,
             // type: req.body.type,
             userId: req._id,
-            ...(req.body.category && { category: req.body.category })
+            ...(req.body.category && { categoryId: req.body.category })
         }
         try {
             const transaction = await transactionsDAO.createTransaction(newTransaction);
